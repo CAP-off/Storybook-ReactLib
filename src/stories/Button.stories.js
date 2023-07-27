@@ -43,3 +43,13 @@ export const Small = {
     label: 'Button',
   },
 };
+
+  export const Hover = {
+    args: {
+      primary: true,
+      hoverColor: 'red',
+      hoverDuration: 1,
+      label: 'Button',
+    },
+  }
+
