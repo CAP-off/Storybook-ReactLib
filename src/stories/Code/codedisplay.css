@@ -1,0 +1,24 @@
+
+.code-display {
+    background-color: #282c34; /* Fond foncé */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-x: auto;
+  }
+
+  .code-display code {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+  }
+
+  /* Styles spécifiques pour la coloration syntaxique de différents langages */
+  .code-display .language-javascript code {
+    color: #f8f8f8; /* Couleur vive pour le code JavaScript */
+  }
+
+  .code-display .language-python code {
+    color: #f8f8f8; /* Couleur vive pour le code Python */
+  }
+
+  /* Ajoutez d'autres styles pour les langages supplémentaires que vous souhaitez prendre en charge */
