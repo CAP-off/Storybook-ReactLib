@@ -52,7 +52,7 @@ const Modal = ({
     borderRadius: `${buttonRadius}px`,
     border: `1px solid ${borderFirstButtonColor}`,
     color: ButtonTextFirstButtonColor,
-    transition: `background-color ${buttonTransitionDuration}s`,
+    transition: `background-color ${buttonTransitionDuration}s, color ${buttonTransitionDuration}s`,
   };
 
   const secondaryButtonStyle = {
@@ -60,13 +60,20 @@ const Modal = ({
     borderRadius: `${buttonRadius}px`,
     border: `${borderGeneral}px solid ${borderSecondButtonColor}`,
     color: ButtonTextSecondButtonColor,
-    transition: `background-color ${buttonTransitionDuration}s`,
+    transition: `background-color ${buttonTransitionDuration}s, color ${buttonTransitionDuration}s`,
   };
 
-  if (enableButtonHovers) {
-    primaryButtonStyle['backgroundColor'] = primaryButtonHover ? primaryButtonHoverColor : primaryButtonColor;
-    secondaryButtonStyle['backgroundColor'] = secondaryButtonHover ? secondaryButtonHoverColor : secondaryButtonColor;
-  }
+  const primaryButtonHoverStyle = {
+    ...primaryButtonStyle,
+    backgroundColor: primaryButtonHover ? primaryButtonHoverColor : primaryButtonColor,
+    color: primaryButtonHover ? ButtonTextFirstButtonColor : ButtonTextFirstButtonColor,
+  };
+
+  const secondaryButtonHoverStyle = {
+    ...secondaryButtonStyle,
+    backgroundColor: secondaryButtonHover ? secondaryButtonHoverColor : secondaryButtonColor,
+    color: secondaryButtonHover ? ButtonTextSecondButtonColor : ButtonTextSecondButtonColor,
+  };
 
   const titleContainerStyle = {
     background: titleBackground,
@@ -121,7 +128,7 @@ const Modal = ({
           {!hideSecondaryButton && secondaryButtonLabel && (
             <button
               className="secondary-button"
-              style={secondaryButtonStyle}
+              style={enableButtonHovers ? secondaryButtonHoverStyle : secondaryButtonStyle}
               onClick={onSecondaryButtonClick}
               onMouseEnter={() => setSecondaryButtonHover(true)}
               onMouseLeave={() => setSecondaryButtonHover(false)}
@@ -132,7 +139,7 @@ const Modal = ({
           {primaryButtonLabel && (
             <button
               className="primary-button"
-              style={primaryButtonStyle}
+              style={enableButtonHovers ? primaryButtonHoverStyle : primaryButtonStyle}
               onClick={onPrimaryButtonClick}
               onMouseEnter={() => setPrimaryButtonHover(true)}
               onMouseLeave={() => setPrimaryButtonHover(false)}
@@ -145,6 +152,7 @@ const Modal = ({
     </div>
   );
 };
+
 Modal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   title: PropTypes.string.isRequired,
@@ -202,8 +210,8 @@ Modal.defaultProps = {
   SizeContent: 16,
   WeightContent: 400,
   enableButtonHovers: true,
-    primaryButtonHoverColor: '#ffffff',
-    secondaryButtonHoverColor: '#ffffff',
+  primaryButtonHoverColor: '#ffffff',
+  secondaryButtonHoverColor: '#ffffff',
   buttonTransitionDuration: 0.3,
 };
 
