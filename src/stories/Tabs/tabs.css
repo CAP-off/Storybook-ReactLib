@@ -1,0 +1,29 @@
+/* Assure-toi d'ajouter des styles pour les onglets et le contenu des onglets ici */
+.tabs-container {
+    /* ajoute un espace entre */
+    margin-top: 16px;
+
+  }
+
+  .tabs {
+    /* Ajoute des styles pour la barre des onglets ici */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 8px;
+  }
+
+  .tab {
+    /* Ajoute des styles pour chaque onglet ici */
+    cursor: pointer;
+    padding: 8px;
+    color: #333;
+  }
+
+
+
+  .tab-content {
+    /* Ajoute des styles pour le contenu des onglets ici */
+    margin-top: 16px;
+  }
