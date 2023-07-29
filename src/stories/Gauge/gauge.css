@@ -1,0 +1,15 @@
+.gauge-container {
+    width: 100%;
+    background-color: #f0f0f0; /* Utilise la valeur de borderBgColor pour définir la couleur de fond du container */
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .gauge {
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0; /* Utilise la valeur de borderBgColor pour définir la couleur de fond du container */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: width 0.5s ease-in-out;
+  }
