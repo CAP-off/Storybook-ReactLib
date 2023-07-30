@@ -1,0 +1,26 @@
+.gauge-circle-container {
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .gauge-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip: rect(0, 50%, 100%, 0);
+    transform-origin: 100% 50%;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+  }
+
+  .gauge-circle-center {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+  }

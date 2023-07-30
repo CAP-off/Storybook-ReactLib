@@ -210,8 +210,8 @@ Modal.defaultProps = {
   SizeContent: 16,
   WeightContent: 400,
   enableButtonHovers: true,
-  primaryButtonHoverColor: '#ffffff',
-  secondaryButtonHoverColor: '#ffffff',
+  primaryButtonHoverColor: 'cyan',
+  secondaryButtonHoverColor: 'cyan',
   buttonTransitionDuration: 0.3,
 };
 
